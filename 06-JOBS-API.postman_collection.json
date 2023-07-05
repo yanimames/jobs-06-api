@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "ed5cad19-f87b-48e8-8628-b530260b0498",
+		"name": "06-JOBS-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28099623"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"john\",\r\n    \"email\":\"john@gmail.com\",\r\n    \"password\":\"secret\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"lisa\",\r\n    \"email\":\"lisa2@gmail.com\",\r\n    \"password\":\"secret\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Jobs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDlmMGY3Yjc4YmY0ZjE4YzBiNDE2OWYiLCJuYW1lIjoibGlzYSIsImlhdCI6MTY4ODE0NTc4OCwiZXhwIjoxNjkwNzM3Nzg4fQ.Pk_j_vPbVBHmiUnQcrR0ZSczFcMu4aVUyDuMumaVT3k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/jobs",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Jobs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDlmMGY3Yjc4YmY0ZjE4YzBiNDE2OWYiLCJuYW1lIjoibGlzYSIsImlhdCI6MTY4ODE0NTc4OCwiZXhwIjoxNjkwNzM3Nzg4fQ.Pk_j_vPbVBHmiUnQcrR0ZSczFcMu4aVUyDuMumaVT3k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/jobs",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get SingleJob",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDlmMGY3Yjc4YmY0ZjE4YzBiNDE2OWYiLCJuYW1lIjoibGlzYSIsImlhdCI6MTY4ODE0NTc4OCwiZXhwIjoxNjkwNzM3Nzg4fQ.Pk_j_vPbVBHmiUnQcrR0ZSczFcMu4aVUyDuMumaVT3k",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/jobs/64a30d691986ed06ac87f4bc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs",
+						"64a30d691986ed06ac87f4bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDlmMGY3Yjc4YmY0ZjE4YzBiNDE2OWYiLCJuYW1lIjoibGlzYSIsImlhdCI6MTY4ODE0NTc4OCwiZXhwIjoxNjkwNzM3Nzg4fQ.Pk_j_vPbVBHmiUnQcrR0ZSczFcMu4aVUyDuMumaVT3k",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/jobs/64a30d691986ed06ac87f4bc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs",
+						"64a30d691986ed06ac87f4bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/jobs/64a306603018210a24d6a22d",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jobs",
+						"64a306603018210a24d6a22d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
